@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "223179862210",
+    "project_id": "fir-login-check-75276",
+    "storage_bucket": "fir-login-check-75276.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223179862210:android:c3b174289125cb846fcb5b",
+        "android_client_info": {
+          "package_name": "com.example.firebase_login_check"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223179862210-fau5ritscifs723kvtvmigjmmnkcuoqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDC1z-W-txUxJavMjGefnueGzIhaLPoAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223179862210-fau5ritscifs723kvtvmigjmmnkcuoqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
