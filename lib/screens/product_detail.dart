@@ -1,18 +1,52 @@
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatelessWidget {
-   const ProductDetail({super.key,required this.name,required this.price});
- final String name;
- final String price;
+  const ProductDetail({super.key, required this.name, required this.price});
+  final String name;
+  final String price;
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 100,width: 100,),
-          Text(name),
-          Text(price),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      color: Colors.amber,
+                      // width: MediaQuery.of(context).size.width * 0.7,
+                      height: MediaQuery.of(context).size.height * 0.4,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(15.0),
+                      child: Text(
+                        name,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(price,textAlign: TextAlign.center,),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // const SizedBox(
+          //   height: 100,
+          //   width: 100,
+          // ),
         ],
       ),
     );

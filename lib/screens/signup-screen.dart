@@ -5,11 +5,18 @@ import 'package:firebase_login_check/components/my_button.dart';
 import 'package:firebase_login_check/components/textfields.dart';
 import 'package:flutter/material.dart';
 
-class SignUpScreen extends StatelessWidget {
-  SignUpScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController semailControl = TextEditingController();
+
   TextEditingController spassControl = TextEditingController();
+
   signup(context) async {
     try {
       final credential =
@@ -33,7 +40,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text("SignUp"),centerTitle: true,),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20.0,

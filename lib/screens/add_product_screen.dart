@@ -1,7 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:js';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_login_check/components/my_button.dart';
 import 'package:firebase_login_check/components/textfields.dart';
@@ -16,11 +14,11 @@ class AddProductScreen extends StatelessWidget {
     CollectionReference products =
         FirebaseFirestore.instance.collection("products");
     products
-        .add({"Name": productName.text, "Price": productPrice.text});
-        
-        // .then((value) => print("Product Addes"))
-        // .catchError((e) => print(e));
+        .add({"Name": productName.text, "Price": productPrice.text})
+        .then((value) => print("Product Addes"))
+        .catchError((e) => print(e));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,9 +26,11 @@ class AddProductScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: SizedBox(
-            height: 250,
+            height: 300,
             width: double.infinity,
             child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
               elevation: 10,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -40,7 +40,8 @@ class AddProductScreen extends StatelessWidget {
                     MyTextField(
                       controller: productName,
                       hintText: "Add product",
-                      obscureText: false,
+                      obscureText: false, 
+                      
                     ),
                     MyTextField(
                       controller: productPrice,

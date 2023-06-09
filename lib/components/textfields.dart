@@ -5,21 +5,24 @@ class MyTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   final Icon? icon;
+  final int? maxlength;
   const MyTextField({
     super.key,
     required this.controller,
     required this.hintText,
     required this.obscureText,
     this.icon,
+    this.maxlength,
 
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,  
+      height: 70,  
       width: double.infinity,
       child: TextField(
+        maxLength: maxlength,
         controller: controller,
         obscureText: obscureText,
         

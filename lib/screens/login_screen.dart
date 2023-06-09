@@ -1,3 +1,5 @@
+
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_login_check/components/my_button.dart';
 import 'package:firebase_login_check/components/textfields.dart';
@@ -7,22 +9,24 @@ import 'package:flutter/material.dart';
 
 import '../components/square_tile.dart';
 
-class LoginScreen extends StatelessWidget {
-   LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailControl = TextEditingController();
 
-  TextEditingController passControl= TextEditingController();
+  TextEditingController passControl = TextEditingController();
 
   login(context) async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailControl.text, password: passControl.text);
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => AddProductScreen(),
-        ),
-      );
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => AddProductScreen()));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
       } else if (e.code == 'wrong-password') {}
@@ -32,13 +36,13 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SafeArea(
+      appBar: AppBar(title: const Text("SignIn",style: TextStyle(fontSize: 25),),centerTitle: true,),
+      body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: MediaQuery.of(context).size.height * 0.2),
               MyTextField(
                 controller: emailControl,
                 hintText: "enter your email",
@@ -129,7 +133,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   //  Apple button
 
-                  SquareTile(imagePath: 'lib/images/apple.png')
+                  SquareTile(imagePath: 'lib/images/facebook.png',color: Colors.blue,),
                 ],
               ),
               const SizedBox(
