@@ -8,12 +8,10 @@ class AllProductsView extends StatelessWidget {
   });
   final CollectionReference products =
       FirebaseFirestore.instance.collection("products");
+  final CollectionReference email =
+      FirebaseFirestore.instance.collection("email");
   getAllProducts() async {
     return products.get();
-  }
-
-  deletaData() async {
-    await products.doc().delete();
   }
 
   deleteData(id) async {
@@ -57,7 +55,9 @@ class AllProductsView extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.grey.shade300,),
+                            border: Border.all(
+                              color: Colors.grey.shade300,
+                            ),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,6 +83,7 @@ class AllProductsView extends StatelessWidget {
                               ),
                               Text(
                                   'Price : ${snapshot.data.docs[index]['Price']}'),
+                              Text('Emal : ${snapshot.data.collection[index]}'),
                               GestureDetector(
                                 onTap: () {
                                   FirebaseFirestore.instance

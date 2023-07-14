@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_login_check/components/my_button.dart';
 import 'package:firebase_login_check/components/textfields.dart';
@@ -18,8 +16,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailControl = TextEditingController();
-
   TextEditingController passControl = TextEditingController();
+  bool passwordVisible = false;
 
   login(context) async {
     try {
@@ -36,7 +34,13 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("SignIn",style: TextStyle(fontSize: 25),),centerTitle: true,),
+      appBar: AppBar(
+        title: const Text(
+          "SignIn",
+          style: TextStyle(fontSize: 25),
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -59,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
               MyTextField(
                 controller: passControl,
                 hintText: "enter your password",
-                obscureText: true,
+                obscureText: passwordVisible,
                 icon: const Icon(
                   Icons.visibility,
                   size: 20,
@@ -133,7 +137,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   //  Apple button
 
-                  SquareTile(imagePath: 'lib/images/facebook.png',color: Colors.blue,),
+                  SquareTile(
+                    imagePath: 'lib/images/facebook.png',
+                    color: Colors.blue,
+                  ),
                 ],
               ),
               const SizedBox(
@@ -149,9 +156,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextButton(
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SignUpScreen()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignUpScreen(),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Register Now',

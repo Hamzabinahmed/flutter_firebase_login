@@ -10,14 +10,22 @@ class AddProductScreen extends StatelessWidget {
   AddProductScreen({super.key});
   TextEditingController productName = TextEditingController();
   TextEditingController productPrice = TextEditingController();
+  TextEditingController nameEmail = TextEditingController();
+
   addProduct() {
     CollectionReference products =
         FirebaseFirestore.instance.collection("products");
+    CollectionReference email = FirebaseFirestore.instance.collection("email");
+    email.add({"email": nameEmail.text});
     products
         .add({"Name": productName.text, "Price": productPrice.text})
         .then((value) => print("Product Addes"))
         .catchError((e) => print(e));
   }
+
+  // addEmail() {
+  //   CollectionReference email = FirebaseFirestore.instance.collection("email");
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +48,17 @@ class AddProductScreen extends StatelessWidget {
                     MyTextField(
                       controller: productName,
                       hintText: "Add product",
-                      obscureText: false, 
-                      
+                      obscureText: false,
                     ),
                     MyTextField(
                       controller: productPrice,
                       hintText: "Add product price",
                       obscureText: false,
                     ),
+                    MyTextField(
+                        controller: nameEmail,
+                        hintText: "add email",
+                        obscureText: false),
                     MyButton(
                         onPress: () {
                           addProduct();

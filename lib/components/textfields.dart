@@ -6,6 +6,7 @@ class MyTextField extends StatelessWidget {
   final bool obscureText;
   final Icon? icon;
   final int? maxlength;
+
   const MyTextField({
     super.key,
     required this.controller,
@@ -13,29 +14,26 @@ class MyTextField extends StatelessWidget {
     required this.obscureText,
     this.icon,
     this.maxlength,
-
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70,  
+      height: 70,
       width: double.infinity,
       child: TextField(
         maxLength: maxlength,
         controller: controller,
         obscureText: obscureText,
-        
-        decoration: InputDecoration(     
+        decoration: InputDecoration(
           suffixIcon: icon,
-          enabledBorder:  OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: Colors.white),
             borderRadius: BorderRadius.circular(8),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey.shade400),
           ),
-          
           fillColor: Colors.grey.shade200,
           filled: true,
           hintText: hintText,
