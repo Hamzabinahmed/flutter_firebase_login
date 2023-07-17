@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_login_check/components/my_button.dart';
 import 'package:firebase_login_check/components/textfields.dart';
+import 'package:firebase_login_check/resources/colors.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -14,7 +15,6 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController semailControl = TextEditingController();
-
   TextEditingController spassControl = TextEditingController();
 
   signup(context) async {
@@ -40,23 +40,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("SignUp"),centerTitle: true,),
+      appBar: AppBar(
+        backgroundColor: AppColors.depPurple,
+        title: const Text("SignUp"),
+        centerTitle: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20.0,
         ),
         child: SizedBox(
-          height: 300,
+          height: 350,
           child: Card(
-           elevation: 10,
-         
-          
+            elevation: 10,
             margin: const EdgeInsets.only(top: 100),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
-                
                   MyTextField(
                     controller: semailControl,
                     hintText: "register email",

@@ -10,13 +10,13 @@ class AddProductScreen extends StatelessWidget {
   AddProductScreen({super.key});
   TextEditingController productName = TextEditingController();
   TextEditingController productPrice = TextEditingController();
-  TextEditingController nameEmail = TextEditingController();
+  // TextEditingController nameEmail = TextEditingController();
 
   addProduct() {
     CollectionReference products =
         FirebaseFirestore.instance.collection("products");
-    CollectionReference email = FirebaseFirestore.instance.collection("email");
-    email.add({"email": nameEmail.text});
+    // CollectionReference email = FirebaseFirestore.instance.collection("email");
+    // email.add({"email": nameEmail.text});
     products
         .add({"Name": productName.text, "Price": productPrice.text})
         .then((value) => print("Product Addes"))
@@ -34,7 +34,7 @@ class AddProductScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: SizedBox(
-            height: 300,
+            height: 400,
             width: double.infinity,
             child: Card(
               shape: RoundedRectangleBorder(
@@ -55,10 +55,10 @@ class AddProductScreen extends StatelessWidget {
                       hintText: "Add product price",
                       obscureText: false,
                     ),
-                    MyTextField(
-                        controller: nameEmail,
-                        hintText: "add email",
-                        obscureText: false),
+                    // MyTextField(
+                    //     controller: nameEmail,
+                    //     hintText: "add email",
+                    //     obscureText: false),
                     MyButton(
                         onPress: () {
                           addProduct();
@@ -67,9 +67,11 @@ class AddProductScreen extends StatelessWidget {
                     MyButton(
                         onPress: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AllProductsView()));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AllProductsView(),
+                            ),
+                          );
                         },
                         text: "View Your products"),
                   ],

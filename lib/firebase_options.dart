@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '223179862210',
     projectId: 'fir-login-check-75276',
     storageBucket: 'fir-login-check-75276.appspot.com',
+    androidClientId: '223179862210-k17ft87lm94j9nbg8knnhd6k76cunbgv.apps.googleusercontent.com',
     iosClientId: '223179862210-f90jco4kfvq2hk74fp8op9nv63qp0gua.apps.googleusercontent.com',
     iosBundleId: 'com.example.firebaseLoginCheck',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '223179862210',
     projectId: 'fir-login-check-75276',
     storageBucket: 'fir-login-check-75276.appspot.com',
+    androidClientId: '223179862210-k17ft87lm94j9nbg8knnhd6k76cunbgv.apps.googleusercontent.com',
     iosClientId: '223179862210-mof0uu5ifkm923256rmsdqc223hektes.apps.googleusercontent.com',
     iosBundleId: 'com.example.firebaseLoginCheck.RunnerTests',
   );

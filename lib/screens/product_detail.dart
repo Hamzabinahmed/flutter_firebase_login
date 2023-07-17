@@ -1,3 +1,4 @@
+import 'package:firebase_login_check/resources/colors.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatelessWidget {
@@ -7,7 +8,9 @@ class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: AppColors.depPurple,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

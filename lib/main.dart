@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_login_check/firebase_options.dart';
 import 'package:firebase_login_check/screens/allproduct.dart';
 import 'package:firebase_login_check/screens/login_screen.dart';
+import 'package:firebase_login_check/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -19,9 +20,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.black,),),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.black,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      // home: const LoginScreen(),
+      home: const SplashScreen(),
       // home: AllProductsView(),
     );
   }

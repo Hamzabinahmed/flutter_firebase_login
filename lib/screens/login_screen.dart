@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_login_check/components/my_button.dart';
 import 'package:firebase_login_check/components/textfields.dart';
+import 'package:firebase_login_check/resources/colors.dart';
 import 'package:firebase_login_check/screens/add_product_screen.dart';
 import 'package:firebase_login_check/screens/signup-screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailControl = TextEditingController();
   TextEditingController passControl = TextEditingController();
-  bool passwordVisible = false;
+  bool passwordVisible = true;
 
   login(context) async {
     try {
@@ -35,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.depPurple,
         title: const Text(
           "SignIn",
           style: TextStyle(fontSize: 25),

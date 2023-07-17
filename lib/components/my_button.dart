@@ -1,3 +1,4 @@
+import 'package:firebase_login_check/resources/colors.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -13,7 +14,7 @@ class MyButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width*0.75,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
+          backgroundColor: AppColors.depPurple,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
