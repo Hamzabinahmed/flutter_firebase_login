@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_login_check/firebase_options.dart';
 import 'package:firebase_login_check/screens/allproduct.dart';
 import 'package:firebase_login_check/screens/login_screen.dart';
+import 'package:firebase_login_check/screens/slider/carousel_screen.dart';
 import 'package:firebase_login_check/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       // home: const LoginScreen(),
       home: const SplashScreen(),
       // home: AllProductsView(),
+      // home: CarouselScreen(),
     );
   }
 }
